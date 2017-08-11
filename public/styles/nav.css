@@ -15,6 +15,7 @@ nav{
     position: fixed;
     top: 0;
     width: 100%;
+    height: 150px;
     background-color: white;
     z-index: 1;
 }
@@ -34,11 +35,6 @@ nav{
 .compose{
     align-self: center;
 }
-
-/*#nav-bar .logo, #nav-bar .header {
-    float: left;
-    line-height: 100px;
-} */
 
 .composeButton{
     display: flex;
@@ -65,6 +61,15 @@ nav{
     box-shadow: 5px 5px 10px #e6a2d7;
     transition: box-shadow 0.3s ease-in-out;
 }
+/***************************
+MEDIA QUERIES
+****************************/
+
+@media(max-width: 900px){
+    main{
+        width: 70%;
+    }
+}
 
 @media(max-width: 500px){
 
@@ -90,11 +95,7 @@ nav{
     main{
         width: 100%;
     }
-
-
-
 }
-
 
 
 

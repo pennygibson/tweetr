@@ -4,10 +4,10 @@
  * Do not modify these two selectors, please
  */
 html {
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+   box-sizing: inherit;
 }
 
 /*
@@ -15,10 +15,10 @@ html {
  */
 
 body {
-  margin: 0 auto;
-  color: dimgray;
-  font-family: 'Lato', sans-serif;
-  width: 100%;
+   margin: 0 auto;
+   color: dimgray;
+   font-family: 'Lato', sans-serif;
+   width: 100%;
 
 }
 
@@ -36,7 +36,10 @@ body {
 h2{
     text-align: center;
     border-bottom: 1px solid #ed0492;
-    color: dimgray;
+    color: #ed0492;
+}
+.new-tweet{
+    margin-top: 40px;
 }
 .new-tweet, input[type="submit"]:hover{
     border: 3px solid #ed0492;
@@ -156,8 +159,6 @@ footer{
     width: 90%;
     margin: 0 auto;
 }
-
-
 
 
 
