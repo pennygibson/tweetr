@@ -15,9 +15,10 @@ html {
  */
 
 body {
-  margin: 0;
+  margin: 0 auto;
   color: dimgray;
   font-family: 'Lato', sans-serif;
+  width: 100%;
 
 }
 
@@ -25,7 +26,7 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions */
 
  main {
-    width: 600px;
+    width:45%;
     margin: 80px auto 0;
     padding: 20px;
     background-color: white;
@@ -92,10 +93,7 @@ Tweets Container
 .tweetHeader{
     display: flex;
     justify-content: space-around;
-    /*background-color: #eee;*/
-    /*background-color: #da17af;*/
     color: white;
-    /*border-radius: 5px;*/
     padding: 2px;
     width: 100%;
     margin-bottom: 10px;
