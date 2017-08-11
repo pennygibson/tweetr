@@ -4,7 +4,7 @@ Tweeter is a simple, fully responsive, single-page Twitter clone.
 
 ## Final Product
 
-!["Desktop version"]()
+!["Desktop version"](https://github.com/pennygibson/tweetr/blob/master/docs/desktopview.png)
 !["Mobile Version"]()
 
 
