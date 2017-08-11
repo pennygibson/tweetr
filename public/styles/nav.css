@@ -6,8 +6,8 @@ font-family: 'Roboto Condensed', sans-serif;
  */
 
 nav{
-    border-bottom: 13px solid #da17af; 
-    color: #da17af;
+    border-bottom: 13px solid #ed0492;
+    color: #ed0492;
     height: 100px;
     padding: 0 2em;
     position: fixed;
@@ -21,7 +21,7 @@ nav{
     /*font-family:'Roboto Condensed', sans-serif;*/
     font-family: 'Pattaya', sans-serif;
     font-weight: bold;
-    font-size: 2.3em;
+    font-size: 2.5em;
     padding-left: 10px;
 }
 
@@ -38,19 +38,19 @@ nav{
     width: 150px;
     margin-top: 25px;
     border-radius: 10px;
-    border: 2px solid #da17af;
+    border: 2px solid #ed0492;
     font-family: 'Lato', sans-serif;
     font-size: 1em;
     letter-spacing: 1px;
     font-weight: bold;
-    background-color: #da17af;
+    background-color: #ed0492;
     color: white;
-    
+
 }
 
 .composeButton:hover{
     background-color: white;
-    color: #da17af;
+    color: #ed0492;
     box-shadow: 5px 5px 10px #e6a2d7;
     transition: box-shadow 0.3s ease-in-out;
 }

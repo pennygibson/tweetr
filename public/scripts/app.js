@@ -20,36 +20,34 @@ function createTweetElement(tweetObject){
 
             <article class="tweets">
                 <header class="tweetHeader">
-                    
+
                     <div class="avatar"> <img src="${escape(tweetObject.user.avatars.small)}" width="70px" height="70px"></div>
-                    <div class="name">${escape(tweetObject.user.name)}</div> 
+                    <div class="name">${escape(tweetObject.user.name)}</div>
                     <div class="email"> ${escape(tweetObject.user.handle)} </div>
                 </header>
-                
-                <textarea>${escape(tweetObject.content.text)}</textarea>
-                
+                <div class="textarea">
+                    <textarea>${escape(tweetObject.content.text)}</textarea>
+                </div>
+
                 <footer class="tweetFooter">
-                    <div  class="date"> 
+                    <div  class="date">
                         <span>${escape(tweetObject.created_at)} </span>
                     </div>
                     <div class="icons">
                         <i class="fa fa-heart fa-lg logo"></i>
                         <i class="fa fa-retweet fa-lg logo"></i>
                         <i class="fa fa-flag fa-lg logo"></i>
-                        
-                        
-                    
                     </div>
 
                 </footer>
-            
+
             </article>`
 
 }
 
 const appendTweet = (tweetObject) => {
     //console.log(createTweetElement(tweetObject))
-   $('#tweetSection').append(createTweetElement(tweetObject))  
+   $('#tweetSection').append(createTweetElement(tweetObject))
 }
 
 function renderTweets(tweets) {
@@ -59,40 +57,37 @@ function renderTweets(tweets) {
     var $tweets = tweets.reverse().map(function(tweet){
         appendTweet(tweet)
     })
-    
+
 }
 
 $(document).ready(function(){
     $('.composeButton').click(function(){
        $('.new-tweet').slideToggle("slow", function(){
            $('.formText').focus()
-       }); 
+       });
     });
-    
-    console.log("ready")
-   // var $userInput = $('.formText').val().length
-    
+
+
     $('.newTweetForm').on('submit', function (event) {
         let input = $('.formText').val().length
         console.log(input)
-    event.preventDefault();
-    if(input === 0 || input > 140){
-//        alert("Please enter between 1-140 characters")
+        event.preventDefault();
+    if (input === 0 || input > 140) {
         let error = $("<span class='error'>Please enter between 1-140 characters</span>");
         $('input#submitButton').after(error);
     } else {
         $('span.error').hide();
-        $.ajax({    
+        $.ajax({
         method: 'POST',
         url: '/tweets',
         data: $(this).serialize()
     }).done(function() {
-        loadTweets(); //this is static data
+        loadTweets();
             $('textarea').val('')
     });
     }
 });
-    
+
 function loadTweets (){
     $.ajax({
             url: '/tweets',
@@ -106,4 +101,4 @@ function loadTweets (){
     loadTweets()
 }); //end of $(document).ready
 
-// need name, email and tweet content 
+// need name, email and tweet content
