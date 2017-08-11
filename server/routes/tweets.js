@@ -29,7 +29,7 @@ module.exports = function(DataHelpers) {
       content: {
         text: req.body.text
       },
-      created_at: new Date().toJSON().slice(0,10).replace(/-/g,'/')
+      created_at: new Date()//.toJSON().slice(0,10).replace(/-/g,'/')
     };
 
     DataHelpers.saveTweet(tweet, (err) => {

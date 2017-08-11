@@ -31,29 +31,27 @@
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-
-        <i class="fa fa-twitter fa-5x logo"></i>
-        <span class="header">Tweeter</span>
-
-        <button class="composeButton"><i class="fa fa-pencil-square-o fa-2x"></i>Compose</button>
-
-
-    </nav>
+      <div class="navBarLogo">
+          <i class="fa fa-twitter fa-5x logo"></i>
+          <span class="header">Tweeter</span>
+      </div>
+      <div class="compose">
+          <button class="composeButton"><i class="fa fa-pencil-square-o fa-2x"></i>Compose</button>
+      </div>
+  </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
         <section class="new-tweet">
-  <h2>Compose Tweet</h2>
-    <form action="/tweets" method="POST" class="newTweetForm">
-      <textarea name="text" class="formText" placeholder="What are you humming about?"></textarea>
-      <input type="submit" value="Tweet" id="submitButton">
-
-      <span class="counter">140</span>
-    </form>
+          <h2>Compose Tweet</h2>
+          <form action="/tweets" method="POST" class="newTweetForm">
+            <textarea name="text" class="formText" placeholder="What are you humming about?"></textarea>
+            <input type="submit" value="Tweet" id="submitButton">
+            <span class="counter">140</span>
+          </form>
         </section>
 
         <section id="tweetSection">
-
 
         </section>
     </main>

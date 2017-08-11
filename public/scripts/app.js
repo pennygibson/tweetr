@@ -14,8 +14,19 @@ function escape(str) {
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
+function parseToDateString(timeInSeconds) {
+  return new Date(timeInSeconds).toJSON().slice(0,10).replace(/-/g,'/');
+}
+/*var parsedTweets = tweets.map(function (tweet) {
+  return Object.assign({}, tweet, { created_at: parseToDateString(tweet.created_at) });
+
+});*/
 
 function createTweetElement(tweetObject){
+    const displayDate = function(date) {
+        return date.toDateString();
+    }
+
     return `
 
             <article class="tweets">
@@ -31,7 +42,8 @@ function createTweetElement(tweetObject){
 
                 <footer class="tweetFooter">
                     <div  class="date">
-                        <span>${escape(tweetObject.created_at)} </span>
+                        <span>${escape(displayDate(new Date(tweetObject.created_at)))} </span>
+
                     </div>
                     <div class="icons">
                         <i class="fa fa-heart fa-lg logo"></i>
@@ -54,7 +66,7 @@ function renderTweets(tweets) {
   // loops through tweets
     console.log('renderTweets')
     $('#tweetSection').empty()
-    var $tweets = tweets.reverse().map(function(tweet){
+    var $tweets = tweets.map(function(tweet){
         appendTweet(tweet)
     })
 
@@ -93,10 +105,14 @@ function loadTweets (){
             url: '/tweets',
             method: 'GET',
             success: function (tweets){
+                // parsedTweets = tweets.map(function (tweet) {
+                //     return Object.assign({}, tweet, { created_at: parseToDateString(tweet.created_at) });
+                // });
                 console.log('Success: ', tweets);
                 renderTweets(tweets)
             }
         });
+
     }
     loadTweets()
 }); //end of $(document).ready
